@@ -143,6 +143,10 @@ impl Doc {
         }
     }
 
+    //pub fn get_toc(&self) -> /*Ignored*/Vec<NavPoint> {
+    //    unsafe { TODO: call gepub_sys:gepub_doc_get_toc() }
+    //}
+
     pub fn go_next(&self) -> bool {
         unsafe {
             from_glib(gepub_sys::gepub_doc_go_next(self.to_glib_none().0))
@@ -152,6 +156,18 @@ impl Doc {
     pub fn go_prev(&self) -> bool {
         unsafe {
             from_glib(gepub_sys::gepub_doc_go_prev(self.to_glib_none().0))
+        }
+    }
+
+    pub fn resource_id_to_chapter(&self, id: &str) -> i32 {
+        unsafe {
+            gepub_sys::gepub_doc_resource_id_to_chapter(self.to_glib_none().0, id.to_glib_none().0)
+        }
+    }
+
+    pub fn resource_uri_to_chapter(&self, uri: &str) -> i32 {
+        unsafe {
+            gepub_sys::gepub_doc_resource_uri_to_chapter(self.to_glib_none().0, uri.to_glib_none().0)
         }
     }
 
