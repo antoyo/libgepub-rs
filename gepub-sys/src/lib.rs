@@ -46,6 +46,24 @@ pub type GepubDocClass = *mut _GepubDocClass;
 
 #[repr(C)]
 #[derive(Copy, Clone)]
+pub struct GepubNavPoint {
+    pub label: *mut c_char,
+    pub content: *mut c_char,
+    pub playorder: u64,
+}
+
+impl ::std::fmt::Debug for GepubNavPoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        f.debug_struct(&format!("GepubNavPoint @ {:?}", self as *const _))
+         .field("label", &self.label)
+         .field("content", &self.content)
+         .field("playorder", &self.playorder)
+         .finish()
+    }
+}
+
+#[repr(C)]
+#[derive(Copy, Clone)]
 pub struct GepubResource {
     pub mime: *mut c_char,
     pub uri: *mut c_char,
@@ -163,8 +181,11 @@ extern "C" {
     pub fn gepub_doc_get_resources(doc: *mut GepubDoc) -> *mut glib::GHashTable;
     pub fn gepub_doc_get_text(doc: *mut GepubDoc) -> *mut glib::GList;
     pub fn gepub_doc_get_text_by_id(doc: *mut GepubDoc, id: *const c_char) -> *mut glib::GList;
+    pub fn gepub_doc_get_toc(doc: *mut GepubDoc) -> *mut glib::GList;
     pub fn gepub_doc_go_next(doc: *mut GepubDoc) -> gboolean;
     pub fn gepub_doc_go_prev(doc: *mut GepubDoc) -> gboolean;
+    pub fn gepub_doc_resource_id_to_chapter(doc: *mut GepubDoc, id: *const c_char) -> c_int;
+    pub fn gepub_doc_resource_uri_to_chapter(doc: *mut GepubDoc, uri: *const c_char) -> c_int;
     pub fn gepub_doc_set_chapter(doc: *mut GepubDoc, index: c_int);
 
     //=========================================================================

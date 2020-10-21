@@ -18,6 +18,9 @@ macro_rules! assert_initialized_main_thread {
 }
 
 mod auto;
+mod doc;
+mod nav_point;
 
 pub use auto::*;
-use TextChunk;
+pub use doc::DocExtManual;
+pub use nav_point::NavPoint;

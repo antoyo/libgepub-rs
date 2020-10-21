@@ -239,6 +239,7 @@ fn get_c_value(dir: &Path, cc: &Compiler, name: &str) -> Result<String, Box<dyn 
 }
 
 const RUST_LAYOUTS: &[(&str, Layout)] = &[
+    ("GepubNavPoint", Layout {size: size_of::<GepubNavPoint>(), alignment: align_of::<GepubNavPoint>()}),
     ("GepubResource", Layout {size: size_of::<GepubResource>(), alignment: align_of::<GepubResource>()}),
     ("GepubTextChunk", Layout {size: size_of::<GepubTextChunk>(), alignment: align_of::<GepubTextChunk>()}),
     ("GepubTextChunkClass", Layout {size: size_of::<GepubTextChunkClass>(), alignment: align_of::<GepubTextChunkClass>()}),
