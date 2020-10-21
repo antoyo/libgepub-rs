@@ -228,10 +228,10 @@ extern "C" {
     //=========================================================================
     // Other functions
     //=========================================================================
-    /*pub fn gepub_utils_get_element_by_attr(node: *mut libxml2::xmlNode, attr: *const c_char, value: *const c_char) -> *mut libxml2::xmlNode;
-    pub fn gepub_utils_get_element_by_tag(node: *mut libxml2::xmlNode, name: *const c_char) -> *mut libxml2::xmlNode;
-    pub fn gepub_utils_get_prop(node: *mut libxml2::xmlNode, prop: *const c_char) -> *mut c_char;
-    pub fn gepub_utils_get_text_elements(node: *mut libxml2::xmlNode) -> *mut glib::GList;
-    pub fn gepub_utils_replace_resources(content: *mut glib::GBytes, path: *const c_char) -> *mut glib::GBytes;*/
+    //pub fn gepub_utils_get_element_by_attr(node: /*Ignored*/*mut libxml2::xmlNode, attr: *const c_char, value: *const c_char) -> /*Ignored*/*mut libxml2::xmlNode;
+    //pub fn gepub_utils_get_element_by_tag(node: /*Ignored*/*mut libxml2::xmlNode, name: *const c_char) -> /*Ignored*/*mut libxml2::xmlNode;
+    //pub fn gepub_utils_get_prop(node: /*Ignored*/*mut libxml2::xmlNode, prop: *const c_char) -> *mut c_char;
+    //pub fn gepub_utils_get_text_elements(node: /*Ignored*/*mut libxml2::xmlNode) -> *mut glib::GList;
+    pub fn gepub_utils_replace_resources(content: *mut glib::GBytes, path: *const c_char) -> *mut glib::GBytes;
 
 }
