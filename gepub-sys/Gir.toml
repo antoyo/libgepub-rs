@@ -9,6 +9,7 @@ library = "Gepub"
 version = "0.6"
 single_version_file = "."
 target_path = "."
+ignore = ["libxml2.Node"]
 
 external_libraries = [
    "Gtk",

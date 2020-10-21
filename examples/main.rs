@@ -29,7 +29,7 @@ fn main() {
         window.set_title("First GTK+ Program");
         window.set_default_size(350, 70);
 
-        let doc = Doc::new("/home/bouanto/Nadine Burke Harris, M.D - The deepest well_ healing the long-term effects of childhood adversity-Houghton Mifflin Harcourt (2018).epub").expect("document");
+        let doc = Doc::new("example.epub").expect("document");
         let viewer = gepub::Widget::new();
         viewer.set_hexpand(true);
         viewer.set_vexpand(true);
