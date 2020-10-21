@@ -1,0 +1,18 @@
+[crate_name_overrides]
+"web_kit2" = "webkit2gtk"
+
+[options]
+girs_dir = "../gir-files"
+work_mode = "sys"
+min_cfg_version="0.6"
+library = "Gepub"
+version = "0.6"
+single_version_file = "."
+target_path = "."
+
+external_libraries = [
+   "Gtk",
+   "GLib",
+   "GObject",
+   "WebKit2",
+]

@@ -1,0 +1,27 @@
+[options]
+girs_dir = "gir-files"
+library = "Gepub"
+version = "0.6"
+work_mode = "normal"
+target_path = "."
+generate_safety_asserts = true
+single_version_file = true
+
+external_libraries = [
+    "Gio",
+    "Gtk",
+    "WebKit2",
+]
+
+generate = [
+    "Gepub.Archive",
+    "Gepub.Doc",
+    "Gepub.TextChunk",
+    "Gepub.Widget",
+]
+
+manual = [
+    "GLib.Bytes",
+    "GLib.Error",
+    "Gtk.Widget",
+]
